@@ -39,4 +39,9 @@ public class UserController {
         return userService.deleteUserById(id);
 
     }
+    @GetMapping("/hello")
+    public String hello(){
+        return "hello-xxl";
+
+    }
 }

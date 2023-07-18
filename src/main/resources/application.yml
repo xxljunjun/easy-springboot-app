@@ -18,7 +18,8 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/book?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      # 47.102.216.222
+      url: jdbc:mysql://localhost:3306/book?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
       username: root
       password: root
       initial-size: 8
@@ -28,8 +29,6 @@ spring:
       test-while-idle: true
       test-on-borrow: false
       test-on-return: false
-
-
 mybatis:
   type-aliases-package: com.example.xxlspringboot.pojo
   mapper-locations: classpath:mapper/*.xml
