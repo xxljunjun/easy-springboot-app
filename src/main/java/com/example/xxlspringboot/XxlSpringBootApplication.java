@@ -13,5 +13,4 @@ public class XxlSpringBootApplication {
         SpringApplication.run(XxlSpringBootApplication.class, args);
         System.out.println("服务启动了！！！");
     }
-
 }

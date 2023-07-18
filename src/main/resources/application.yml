@@ -32,8 +32,6 @@ spring:
       test-while-idle: true
       test-on-borrow: false
       test-on-return: false
-
-
 mybatis:
   type-aliases-package: com.example.xxlspringboot.pojo
   mapper-locations: classpath:mapper/*.xml
