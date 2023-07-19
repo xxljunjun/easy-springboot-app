@@ -5,6 +5,6 @@
 
 <mapper namespace="com.example.xxlspringboot.mapper.LoginMapper">
     <insert id="addCaptcha">
-        insert into book.sys_captcha (uuid, code) VALUES (#{uuid},#{code})
+        insert into book.sys_captcha (uuid, code,expire_time) VALUES (#{uuid},#{code},#{expire_time})
     </insert>
 </mapper>

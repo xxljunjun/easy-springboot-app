@@ -1,6 +1,7 @@
 package com.example.xxlspringboot.pojo;
 
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 
 import java.util.Date;
 
@@ -11,6 +12,7 @@ import java.util.Date;
  */
 @Data
 public class Captcha {
+    @Id
     private String uuid;
     /**
      * 验证码
@@ -19,6 +21,6 @@ public class Captcha {
     /**
      * 过期时间
      */
-    private Date expireTime;
+    private Date expire_time;
 
 }

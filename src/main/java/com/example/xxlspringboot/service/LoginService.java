@@ -29,7 +29,7 @@ public class LoginService {
         captchaEntity.setUuid(uuid);
         captchaEntity.setCode(code);
         //5分钟后过期
-//        captchaEntity.setExpireTime(DateUtils.addDateMinutes(new Date(), 5));
+        captchaEntity.setExpire_time(DateUtils.addDateMinutes(new Date(), 5));
         System.out.println("captchaEntity>>"+captchaEntity);
         this.addCaptcha(captchaEntity);
         //返回图片
