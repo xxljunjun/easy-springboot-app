@@ -1,4 +1,4 @@
-package com.example.xxlspringboot.service;
+package com.example.xxlspringboot.service.impl;
 
 
 import com.example.xxlspringboot.mapper.UserMapper;

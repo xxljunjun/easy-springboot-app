@@ -1,7 +1,7 @@
 package com.example.xxlspringboot.controller;
 
 import com.example.xxlspringboot.pojo.User;
-import com.example.xxlspringboot.service.UserService;
+import com.example.xxlspringboot.service.impl.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

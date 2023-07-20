@@ -1,4 +1,4 @@
-package com.example.xxlspringboot.service;
+package com.example.xxlspringboot.service.impl;
 
 
 import com.example.xxlspringboot.common.utils.DateUtils;
@@ -34,6 +34,23 @@ public class LoginService {
         this.addCaptcha(captchaEntity);
         //返回图片
         return producer.createImage(code);
+    }
+    public boolean validate(String uuid, String code) {
+        //查询数据库得到
+        Captcha captchaEntity = loginMapper.queryByUuid(uuid);
+        System.out.println("从数据库查到的验证码"+captchaEntity);
+        if(captchaEntity == null){
+            return false;
+        }
+
+        //每次校验完就删除验证码
+        loginMapper.removeById(uuid);
+
+        if(captchaEntity.getCode().equalsIgnoreCase(code) && captchaEntity.getExpire_time().getTime() >= System.currentTimeMillis()){
+            return true;
+        }
+
+        return false;
     }
 
 }

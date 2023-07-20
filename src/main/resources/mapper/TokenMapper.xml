@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.xxlspringboot.mapper.TokenMapper">
+    <select id="queryTokenById" resultType="SysUserTokenEntity">
+        select * from book.sys_user_token where user_id = #{user_id};
+    </select>
+    <insert id="insertToken">
+        insert into book.sys_user_token (user_id, token, expire_time,update_time) VALUES (#{user_id},#{token},#{expire_time},#{update_time})
+    </insert>
+    <update id="updateTokenById" parameterType="com.example.xxlspringboot.pojo.SysUserTokenEntity">  #传入参数
+        update book.sys_user_token  #更新的表名
+        <set> #更新内容
+        <if test="user_id!=null"> user_id=#{user_id},</if>         #检查是若不为空，更新对应字段
+        <if test="token!=null">token=#{token},</if>
+        <if test="expire_time!=null"> expire_time=#{expire_time},</if>         #检查是若不为空，更新对应字段
+        <if test="update_time!=null">update_time=#{update_time},</if>
+        </set>
+        where user_id=#{user_id}  #要被更新的条件
+    </update>
+</mapper>

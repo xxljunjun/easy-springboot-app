@@ -7,4 +7,13 @@
     <insert id="addCaptcha">
         insert into book.sys_captcha (uuid, code,expire_time) VALUES (#{uuid},#{code},#{expire_time})
     </insert>
+    <select id="queryByUuid" resultType="Captcha">
+        select * from book.sys_captcha where uuid = #{uuid};
+    </select>
+    <delete id="removeById">
+        delete from book.sys_captcha where uuid=#{uuid}
+    </delete>
+    <select id="queryByUserName" resultType="SysUserEntity">
+        select * from book.sys_user where username = #{username};
+    </select>
 </mapper>
